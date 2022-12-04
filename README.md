@@ -17,7 +17,12 @@ docker build -f dockerfiles/spark.Dockerfile -t spark:3.3.1 .
 ## Running the container
 
 ```
-docker run --name spark-master --detach -p 8080:8080 spark:3.3.1
+docker run \
+    --name spark-master \
+    --detach \
+    --ip 172.17.0.2 \
+    -p 8080:8080 \
+    spark:3.3.1
 docker run \
     --name spark-worker \
     --detach \
