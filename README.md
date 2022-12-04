@@ -10,11 +10,17 @@ Docker Desktop installed, which comes with:
 
 ## Building the image
 
-```{dockerfile}
-docker build -f dockerfiles/spark-master.Dockerfile . -t spark-master:3.3.1
-docker build -f dockerfiles/spark-worker.Dockerfile . -t spark-worker:3.3.1
+```
+docker build -f dockerfiles/spark.Dockerfile -t spark:3.3.1 .
 ```
 
 ## Running the container
 
-`docker run -it spark-master:3.3.1`
+```
+docker run --name spark-master --detach -p 8080:8080 spark:3.3.1
+docker run \
+    --name spark-worker \
+    --detach \
+    spark:3.3.1 \
+    /opt/spark/sbin/start-worker.sh spark://172.17.0.2:7077
+```
