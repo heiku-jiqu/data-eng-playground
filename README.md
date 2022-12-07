@@ -30,4 +30,7 @@ docker run \
     /opt/spark/sbin/start-worker.sh spark://172.17.0.2:7077
 ```
 
-Note: to run in powershell, change backslash `\\` to backticks `\``
+Note:
+
+    - to run in powershell, change backslash `\` to backticks `` ` ``
+    - to run in cmd, change backslash `\` to caret `^`
