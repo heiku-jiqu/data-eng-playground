@@ -2,9 +2,9 @@
 
 Docker Desktop installed, which comes with:
 
-    - Docker CLI: Used to manage docker images and containers
-    - Docker Engine: The engine that runs the containers
-    - Docker Compose: Utility to help manage apps that bundle multiple containers
+- Docker CLI: Used to manage docker images and containers
+- Docker Engine: The engine that runs the containers
+- Docker Compose: Utility to help manage apps that bundle multiple containers
 
 # Apache Spark
 
@@ -32,5 +32,5 @@ docker run \
 
 Note:
 
-    - to run in powershell, change backslash `\` to backticks `` ` ``
-    - to run in cmd, change backslash `\` to caret `^`
+- to run in powershell, change backslash `\` to backticks `` ` ``
+- to run in cmd, change backslash `\` to caret `^`
