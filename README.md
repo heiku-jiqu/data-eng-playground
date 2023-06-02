@@ -21,7 +21,7 @@ docker run \
     --name spark-master \
     --detach \
     --ip 172.17.0.2 \
-    -p 8080:8080 \
+    -p 8080:8080 -p 7077:7077\
     spark:3.3.1
 docker run \
     --name spark-worker \
