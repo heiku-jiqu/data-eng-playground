@@ -34,3 +34,23 @@ Note:
 
 - to run in powershell, change backslash `\` to backticks `` ` ``
 - to run in cmd, change backslash `\` to caret `^`
+
+## Using `docker compose`
+
+To build and run everything:
+
+```
+docker compose up -d
+```
+
+To stop everything:
+
+```
+docker compose -p data-eng-playground stop
+```
+
+To remove the containers:
+
+```
+docker compose -p data-eng-playground rm
+```
