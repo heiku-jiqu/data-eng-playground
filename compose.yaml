@@ -1,0 +1,29 @@
+name: data-eng-playground
+
+services:
+  spark-master:
+    build: 
+      dockerfile: './dockerfiles/spark.Dockerfile'
+    ports: 
+      - "8081:8080"
+      - "7077"
+    networks:
+      spark:
+        ipv4_address: 172.18.0.2
+  spark-worker:
+    depends_on:
+      - spark-master
+    build: 
+      dockerfile: './dockerfiles/spark.Dockerfile'
+    networks:
+      spark:
+        ipv4_address: 172.18.0.3
+    command:
+      "/opt/spark/sbin/start-worker.sh spark://172.18.0.2:7077"
+
+networks:
+  spark:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.18.0.1/29"
